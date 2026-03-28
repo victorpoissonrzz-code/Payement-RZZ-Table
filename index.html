@@ -4589,4 +4589,22 @@ function hookRelatedBragard(){
 
 })();
 
+
+// ── FIX: Cart checkout button → pg-checkout ──────────────────
+(function(){
+  const btn = document.getElementById('cchkBtn');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    document.getElementById('cdrw')?.classList.remove('open');
+    document.getElementById('cov')?.classList.remove('open');
+    document.body.style.overflow = '';
+    window.show('pg-checkout');
+  });
+  const keep = document.getElementById('ckeep');
+  if(keep) keep.addEventListener('click', function(){
+    document.getElementById('cdrw')?.classList.remove('open');
+    document.getElementById('cov')?.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+})();
 </script>
